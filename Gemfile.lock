@@ -1,7 +1,14 @@
+PATH
+  remote: .
+  specs:
+    Analyticator (1.0.0)
+      haml
+      sinatra
+
 GEM
   remote: https://rubygems.org/
   specs:
-    haml (4.0.0)
+    haml (4.0.2)
       tilt
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -16,6 +23,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (>= 1.0.21)
-  haml
-  sinatra
+  Analyticator!
+  bundler
