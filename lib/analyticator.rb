@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'rubygems'
 require 'analyticator/version'
-class Analyticator << Sinatra::Application
+class Analyticator < Sinatra::Application
 
   configure do
     set :static, true
