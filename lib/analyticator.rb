@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'rubygems'
 require 'analyticator/version'
-class Analyticator < Sinatra::Application
 
+class Analyticator < Sinatra::Application
   configure do
     set :static, true
     set :public, File.expand_path('../public', __FILE__)
