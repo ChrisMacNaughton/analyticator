@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Analyticator (0.0.1)
+    analyticator (0.0.1)
       haml
       sinatra
 
@@ -23,5 +23,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Analyticator!
+  analyticator!
   bundler

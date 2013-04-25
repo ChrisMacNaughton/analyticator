@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'haml'
-require 'analyticator/version'
 
 class Analyticator < Sinatra::Base
   configure do

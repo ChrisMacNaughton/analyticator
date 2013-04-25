@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'analyticator/version'
+require 'application/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "analyticator"
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
-  spec.executables = ['bin/analyticator']
+  spec.executables = ['analyticator']
   spec.default_executable = 'analyticator'
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
