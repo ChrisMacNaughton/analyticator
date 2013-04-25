@@ -5,17 +5,17 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'analyticator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Analyticator"
+  spec.name          = "analyticator"
   spec.version       = Analyticator::VERSION
   spec.authors       = ["Chris MacNaughton"]
   spec.email         = ["chris@elocal.com"]
-  spec.description   = %q{ Retrieve data about tests Off of Saucelabs.com }
-  spec.summary       = %q{ Retrieve data about tests Off of Saucelabs.com }
+  spec.description   = %q{ Emulate google analytics during development to test events }
+  spec.summary       = %q{ Emulate google analytics during development }
   spec.homepage      = "http://nyancat.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
-  spec.executables = ['analyticator']
+  spec.executables = ['bin/analyticator']
   spec.default_executable = 'analyticator'
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

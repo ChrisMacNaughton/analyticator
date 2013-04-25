@@ -5,9 +5,9 @@ require 'analyticator/version'
 class Analyticator < Sinatra::Base
   configure do
     set :static, true
-    set :public, File.expand_path('../public', __FILE__)
+    set :public, File.expand_path('./', __FILE__)
 
-    set :views,  File.expand_path('../views', __FILE__)
+    set :views,  File.expand_path('./views', __FILE__)
     set :haml, { :format => :html5 }
     set :port, 8080
     @@events ||= []
