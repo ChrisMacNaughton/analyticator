@@ -1,0 +1,54 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title Analytics
+    %link(href="css/bootstrap.min.css" rel="stylesheet" media="screen")
+    %link(href="images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144")
+    %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114")
+    %link(href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72")
+    %link(href="images/apple-touch-icon.png" rel="apple-touch-icon-precomposed")
+    %link(href="favicon.ico" rel="shortcut icon")
+
+  %body
+    .container
+      .jumbotron
+        %h1= "Analytics"
+        %p This is a Google Analytics replacement for use during development to test code.
+      .row
+        .span12
+
+          %table
+            %thead
+              %tr
+                %th{style: "padding-left: 20px; padding-right: 20px"} Date
+                %th{style: "padding-left: 20px; padding-right: 20px"} Action
+                %th{style: "padding-left: 20px; padding-right: 20px"} Location
+                %th{style: "padding-left: 20px; padding-right: 20px"} Label
+                %th{style: "padding-left: 20px; padding-right: 20px"} Value
+            %tbody
+              -total = 0
+              -if @events.nil?
+                %tr
+                  %td{colspan: 5} No events recorded
+              -else
+                -@events.each do |event|
+                  %tr
+                    %td{style: "padding-left: 20px; padding-right: 20px"}= event[:created_at].strftime("%b/%d/%Y %H:%M")
+                    %td{style: "padding-left: 20px; padding-right: 20px"}= event[:action]
+                    %td{style: "padding-left: 20px; padding-right: 20px"}= event[:location]
+                    %td{style: "padding-left: 20px; padding-right: 20px"}= event[:label]
+                    %td{style: "padding-left: 20px; padding-right: 20px"}= event[:value] unless event[:value].nil?
+                    -total += event[:value].to_i
+            %tfoot
+              %tr
+                %td{colspan: 3}
+                %td{style: "padding-left: 20px; padding-right: 20px"}
+                  %strong Total
+                %td{style: "padding-left: 20px; padding-right: 20px"}
+                  %strong= total
+      %footer
+    %script{:src=>"http://code.jquery.com/jquery.js"}
+    %script{:src=>"js/bootstrap.min.js"}
