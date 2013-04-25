@@ -1,10 +1,8 @@
 require 'sinatra'
-require 'haml'
 
-class Analyticator < Sinatra::Base
+class Analytics < Sinatra::Base
   configure do
     set :static, true
-    set :public, File.expand_path('./', __FILE__)
 
     set :views,  File.expand_path('./views', __FILE__)
     set :haml, { :format => :html5 }
