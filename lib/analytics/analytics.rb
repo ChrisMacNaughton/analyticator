@@ -48,3 +48,5 @@ class Analytics < Sinatra::Base
     render js: body, :content_type => "text/javascript"
   end
 end
+
+Analytics.run!
