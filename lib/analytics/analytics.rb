@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'net/http'
 
 class Analytics < Sinatra::Base
   configure do

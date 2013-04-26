@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    analyticator (0.0.1)
+    analyticator (1.0.0)
       haml
       sinatra
 
