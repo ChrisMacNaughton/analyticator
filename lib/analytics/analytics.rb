@@ -5,7 +5,6 @@ class Analytics < Sinatra::Base
   configure do
     set :static, true
     set :environment, :production
-    set :views,  File.expand_path('./views', __FILE__)
     set :haml, { :format => :html5 }
     set :port, 8080
     @@events ||= []
