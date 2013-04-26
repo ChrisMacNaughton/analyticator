@@ -4,7 +4,7 @@ require 'net/http'
 class Analytics < Sinatra::Base
   configure do
     set :static, true
-
+    set :environment, :production
     set :views,  File.expand_path('./views', __FILE__)
     set :haml, { :format => :html5 }
     set :port, 8080
@@ -15,9 +15,7 @@ class Analytics < Sinatra::Base
     @events = @@events
     haml :index
   end
-  get '/test' do
-    puts "#{@@events}"
-  end
+
   get '/__utm.gif' do
     unless params[:utmt].nil?
       options = params[:utme] || ""
@@ -46,7 +44,8 @@ class Analytics < Sinatra::Base
     response = Net::HTTP.get_response(uri)
     local = "http://" + self.request.host + ":" + self.request.port.to_s
     body = response.body.gsub(/http(.*?)google-analytics.com/, local).gsub('www.google-analytics.com', local)
-    render js: body, :content_type => "text/javascript"
+    content_type :"text/javascript"
+    erb "#{body}"
   end
 end
 
