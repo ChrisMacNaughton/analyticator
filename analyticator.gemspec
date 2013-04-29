@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["chris@elocal.com"]
   spec.description   = %q{ Emulate google analytics during development to test events }
   spec.summary       = %q{ Emulate google analytics during development }
-  spec.homepage      = "https://github.com/ChrisMacNaughton/analyticator"
+  spec.homepage      = "http://chrismacnaughton.com/projects/#analyticator"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
