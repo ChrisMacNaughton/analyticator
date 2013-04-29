@@ -23,7 +23,6 @@
           %table
             %thead
               %tr
-                %th{style: "padding-left: 20px; padding-right: 20px"} Date
                 %th{style: "padding-left: 20px; padding-right: 20px"} Action
                 %th{style: "padding-left: 20px; padding-right: 20px"} Location
                 %th{style: "padding-left: 20px; padding-right: 20px"} Label
@@ -36,7 +35,6 @@
               -else
                 -@events.each do |event|
                   %tr
-                    %td{style: "padding-left: 20px; padding-right: 20px"}= event[:created_at].strftime("%b/%d/%Y %H:%M")
                     %td{style: "padding-left: 20px; padding-right: 20px"}= event[:action]
                     %td{style: "padding-left: 20px; padding-right: 20px"}= event[:location]
                     %td{style: "padding-left: 20px; padding-right: 20px"}= event[:label]
