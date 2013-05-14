@@ -7,8 +7,8 @@ require 'analytics/version'
 Gem::Specification.new do |spec|
   spec.name          = "analyticator"
   spec.version       = Analyticator::VERSION
-  spec.authors       = ["Chris MacNaughton"]
-  spec.email         = ["chris@elocal.com"]
+  spec.authors       = ["Chris MacNaughton", "Tom Scott"]
+  spec.email         = ["chris@elocal.com", "tom.scott@elocal.com"]
   spec.description   = %q{ Emulate google analytics during development to test events }
   spec.summary       = %q{ Emulate google analytics during development }
   spec.homepage      = "http://chrismacnaughton.com/projects/#analyticator"
