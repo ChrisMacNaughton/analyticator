@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'net/http'
+require 'haml'
 
 class Analytics < Sinatra::Base
   configure do
@@ -16,6 +17,8 @@ class Analytics < Sinatra::Base
   end
 
   get '/__utm.gif' do
+    args = {}
+    args[:page_title] = params[:utmdt]
     unless params[:utmt].nil?
       options = params[:utme] || ""
       if params[:utmt] == "event"
@@ -31,7 +34,7 @@ class Analytics < Sinatra::Base
           :label => details[2],
           :value => arr[2],
           created_at: Time.now
-        }
+        }.merge(args)
         @@events << options
       end
     end
